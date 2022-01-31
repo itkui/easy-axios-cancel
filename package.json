@@ -1,0 +1,48 @@
+{
+  "name": "easy-axios-cancel",
+  "version": "1.0.0",
+  "description": "axios request break easy",
+  "main": "./lib/easy-axios-cancel.umd.js",
+  "module": "./lib/easy-axios-cancel.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/easy-axios-cancel.es.js",
+      "require": "./lib/easy-axios-cancel.umd.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:itkui/easy-axios-cancel.git"
+  },
+  "bugs": "https://github.com/itkui/easy-axios-cancel/issues",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc & vite build",
+    "dev:server": "cd server && node ./index.js",
+    "start": "yarn dev & yarn dev:server"
+  },
+  "keywords": [
+    "easy-axios-cancel",
+    "umi-request"
+  ],
+  "author": {
+    "name": "itkui",
+    "email": "13452903663@163.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.13",
+    "typescript": "^4.5.5",
+    "vite": "^2.7.13"
+  },
+  "dependencies": {
+    "axios": "^0.25.0"
+  },
+  "types": "types/easy-axios-cancel.d.ts",
+  "files": [
+    "lib/",
+    "types/easy-axios-cancel.d.ts",
+    "package.json",
+    "README.md"
+  ]
+}
