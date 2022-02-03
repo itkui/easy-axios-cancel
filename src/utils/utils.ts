@@ -1,22 +1,20 @@
 import { AxiosRequestConfig } from "axios";
-import { setController, signalMerge } from './abort'
+import { signalMerge } from './abort'
+import { cancelTokenMerge } from './cancelToken'
 import { symbolCancelKey, urlUniqueCancelKey, urlUniqueListCancelKey } from "./cancelKey";
 
-export const errorMerge = (options: AxiosRequestConfig, handle: (error) => void) => {
-  // const _errorHandler = options.validateStatus;
-
-  // options.validateStatus = (error) => {
-  //   handle(error)
-  //   if (_errorHandler) {
-  //     _errorHandler(error);
-  //   } else {
-  //     throw error;
-  //   }
-  // };
+export const errorMerge = (options: AxiosRequestConfig, handle: () => void) => {
+  if (!options.transformResponse) {
+    options.transformResponse = []
+  }
+  if (!Array.isArray(options.transformResponse)) {
+    options.transformResponse = [options.transformResponse]
+  }
+  options.transformResponse.push(handle)
 }
 
 export const cancelKeyCheck = (options: AxiosRequestConfig) => {
-  const { cancelKey, urlUnique, urlUniqueList, url } = options
+  const { cancelKey, urlUnique, urlUniqueList } = options
 
   if (cancelKey) {
     return symbolCancelKey(cancelKey)
@@ -32,13 +30,13 @@ export const cancelKeyCheck = (options: AxiosRequestConfig) => {
 }
 
 export const cancelProvide = (options: AxiosRequestConfig, cancelKey: Symbol) => {
-  switch (options.CancelHandleType) {
+  switch (options.cancelHandleType) {
     case "abortController":
       return signalMerge(options, cancelKey)
 
     case "cancelToken":
 
     default:
-      return
+      return cancelTokenMerge(options, cancelKey)
   }
 }

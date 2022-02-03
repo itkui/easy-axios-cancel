@@ -8,7 +8,7 @@ export interface CancelOptions {
   cancelKey?: string;
   urlUnique?: UrlUnique;
   urlBase?: string;
-  CancelHandleType?: CancelHandleType;
+  cancelHandleType?: CancelHandleType;
   urlUniqueList?: string[];
 }
 

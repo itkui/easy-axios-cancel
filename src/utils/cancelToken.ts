@@ -25,5 +25,5 @@ export const cancelTokenMerge = (options: AxiosRequestConfig, cancelKey: Symbol)
 
   options.cancelToken = token;
 
-  return cancelKey
+  return () => cancelSourceMaps.delete(cancelKey)
 }

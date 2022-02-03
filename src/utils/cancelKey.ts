@@ -29,7 +29,7 @@ const praseUrlUnique = (options: AxiosRequestConfig) => {
 }
 
 export const urlUniqueListCancelKey = (options: AxiosRequestConfig) => {
-  const { urlUniqueList = [], url, urlUnique, urlBase } = options
+  const { urlUniqueList = [] } = options
 
   const requestCancelKeyFor = praseUrlUnique(options)
 

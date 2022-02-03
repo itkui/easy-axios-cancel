@@ -16,10 +16,7 @@
   },
   "bugs": "https://github.com/itkui/easy-axios-cancel/issues",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc & vite build",
-    "dev:server": "cd server && node ./index.js",
-    "start": "yarn dev & yarn dev:server"
+    "build": "tsc & rollup --config rollup.config.js"
   },
   "keywords": [
     "easy-axios-cancel",
@@ -31,9 +28,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.0",
     "@types/node": "^17.0.13",
-    "typescript": "^4.5.5",
-    "vite": "^2.7.13"
+    "rollup": "^2.66.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
   },
   "dependencies": {
     "axios": "^0.25.0"
