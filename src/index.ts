@@ -7,7 +7,10 @@ const registryCancelOption: RegistryCancelOption = (axios) => {
 
     if (cancelKeySymbol) {
       const removeCancel = cancelProvide(req, cancelKeySymbol)
-      errorMerge(req, removeCancel)
+      errorMerge(req, (data) => {
+        removeCancel();
+        return data
+      })
     }
 
     return req;

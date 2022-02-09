@@ -1,6 +1,6 @@
 {
   "name": "easy-axios-cancel",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "axios request break easy",
   "main": "./lib/easy-axios-cancel.umd.js",
   "module": "./lib/easy-axios-cancel.es.js",

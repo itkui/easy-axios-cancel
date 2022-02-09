@@ -3,7 +3,7 @@ import { signalMerge } from './abort'
 import { cancelTokenMerge } from './cancelToken'
 import { symbolCancelKey, urlUniqueCancelKey, urlUniqueListCancelKey } from "./cancelKey";
 
-export const errorMerge = (options: AxiosRequestConfig, handle: () => void) => {
+export const errorMerge = (options: AxiosRequestConfig, handle: (data: string) => string) => {
   if (!options.transformResponse) {
     options.transformResponse = []
   }

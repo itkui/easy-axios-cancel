@@ -4,7 +4,7 @@ umi-request 取消请求第三方库, 你可以很方便的中断 umi-request �
 
 [中文文档](https://github.com/itkui/easy-axios-cancel/blob/master/README.md)|[英文文档](https://github.com/itkui/easy-axios-cancel/blob/master/en.README.md)
 
-[![NPM version](https://img.shields.io/badge/npm-v0.9.0-blue?style=flat)](https://www.npmjs.com/package/easy-axios-cancel)
+[![NPM version](https://img.shields.io/badge/npm-v0.9.1-blue?style=flat)](https://www.npmjs.com/package/easy-axios-cancel)
 
 ## 安装
 
